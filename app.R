@@ -113,7 +113,11 @@ ui <- fluidPage(
       * {
         font-family: 'Arial';    # * means Arial will be used for all text, otherwise can use h1, p ...
       }
-    "))
+    ")),
+    # Define iframe for embedding into website 
+    # (https://www.cultureofinsight.com/blog/2018/03/15/2018-03-15-responsive-iframes-for-shiny-apps/)
+    tags$script(src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.16/iframeResizer.contentWindow.min.js",
+                  type="text/javascript")
   ),
    
    # Application title
@@ -360,6 +364,9 @@ ui <- fluidPage(
    ) # end tabsetPanel
 ) # end fluidPage
 
+# End iframe for embedding into website 
+# (https://www.cultureofinsight.com/blog/2018/03/15/2018-03-15-responsive-iframes-for-shiny-apps/)
+HTML('<div data-iframe-height></div>')
 
 # ----- Define server logic -----
 # required to draw the leaflet map and barplots
